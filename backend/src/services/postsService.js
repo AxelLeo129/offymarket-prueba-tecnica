@@ -1,4 +1,4 @@
-const EXTERNAL_URL = "https://687eade4efe65e5200875629.mockapi.io/api/v1/posts";
+const EXTERNAL_URL = process.env.EXTERNAL_POSTS_URL || "https://687eade4efe65e5200875629.mockapi.io/api/v1/posts";
 
 async function fetchExternalPosts() {
   const res = await fetch(EXTERNAL_URL);
