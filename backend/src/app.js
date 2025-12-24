@@ -1,17 +1,13 @@
-import express from "express";
-import cors from "cors";
+const express = require("express");
+const cors = require("cors");
 
-export function createApp() {
-  const app = express();
-  app.use(cors());
-  app.use(express.json());
+const postsRouter = require("./routes/posts");
 
-  app.get("/health", (_, res) => res.json({ ok: true }));
+const app = express();
 
-  // TODO: GET /posts (next step)
-  app.get("/posts", (_, res) => {
-    res.status(501).json({ message: "Not implemented yet" });
-  });
+app.use(cors());
+app.use(express.json());
 
-  return app;
-}
+app.use("/posts", postsRouter);
+
+module.exports = app;
