@@ -106,7 +106,7 @@ npm run dev
 ```
 
 El frontend quedará en:
-👉 http://localhost:5173
+- http://localhost:5173
 
 ---
 
